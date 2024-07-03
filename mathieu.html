@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Transactionnelle</title>
+</head>
+<body>
+<center>
+    <h1>Bienvenue sur notre page de paiement</h1>
+    <p>Merci de votre achat. Cliquez sur le bouton ci-dessous pour procéder au paiement via PayPal.</p>
+    
+<!-- PayPal Logo --><table border="0" cellpadding="10" cellspacing="0" align="center"><tr><td align="center"></td></tr><tr><td align="center"><a href="https://www.paypal.com/webapps/mpp/paypal-popup" title="How PayPal Works" onclick="javascript:window.open('https://www.paypal.com/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"><img src="https://www.paypalobjects.com/webstatic/mktg/logo/AM_mc_vs_dc_ae.jpg" border="0" alt="PayPal Acceptance Mark"></a></td></tr></table><!-- PayPal Logo -->
+
+    <!-- Bouton PayPal -->
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <!-- Identifiant du commerçant PayPal -->
+        <input type="hidden" name="business" value="votre-email-paypal@exemple.com">
+        
+        <!-- Montant de l'achat -->
+        <input type="hidden" name="amount" value="10.00">
+        <input type="hidden" name="currency_code" value="EUR">
+        
+        <!-- URL de retour et URL d'annulation -->
+        <input type="hidden" name="return" value="https://www.votre-site.com/success">
+        <input type="hidden" name="cancel_return" value="https://www.votre-site.com/cancel">
+        
+        <!-- Code PayPal pour le bouton d'achat -->
+        <input type="hidden" name="cmd" value="_xclick">
+        
+        <!-- Description de l'achat -->
+        <input type="hidden" name="item_name" value="Produit Exemple">
+        
+        <!-- Bouton de soumission -->
+        <input type="submit" value="Payer avec PayPal">
+    </form>
+</body>
+</html>
